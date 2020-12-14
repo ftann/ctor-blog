@@ -24,3 +24,7 @@ jobs:
       
       - name: Zip
         run: zip -r public.zip public
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: public.zip
