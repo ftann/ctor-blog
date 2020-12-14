@@ -1,0 +1,5 @@
+{{ define "main" }}
+  {{ range index .Site.Taxonomies .Page.Type }}
+    <h1><a href="{{ .Page.Permalink }}">{{ .Page.Title }} <sup>{{ .Count }}</sup></a></h1>
+  {{ end }}
+{{ end }}

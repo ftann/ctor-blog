@@ -1,0 +1,15 @@
+{{ define "main" }}
+	{{ range .Paginator.Pages }}
+		<article class="post">
+			<h1><a href="{{ .Permalink }}">{{ .Title }}</a> {{ if .Draft }}(Draft){{ end }}</h1>
+
+			<div class="post-content">
+				<p>{{ .Summary | plainify | safeHTML }} {{ if .Truncated }} … {{ end }}</p>
+			</div>
+
+			<p class="meta">Posted on <span class="postdate">{{ .Date.Format "2006-01-02" }}</span></p>
+		</article>
+	{{ end }}
+
+	{{ partial "pagination.html" . }}
+{{ end }}

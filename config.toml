@@ -3,7 +3,7 @@ languageCode = "en"
 title = "ft"
 copyright = "© {year}"
 
-theme = "solar-theme-hugo"
+theme = "solar2"
 paginate = 8
 pygmentsStyle = "solarized-dark256" # solarized-light, -dark or -dark256
 
