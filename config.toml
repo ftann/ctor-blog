@@ -1,0 +1,25 @@
+baseURL = "https://floriantanner.ch/"
+languageCode = "en"
+title = "ft"
+copyright = "© {year}"
+
+theme = "solar-theme-hugo"
+paginate = 8
+pygmentsStyle = "solarized-dark256" # solarized-light, -dark or -dark256
+
+summaryLength = 24
+
+[params]
+  scheme = "gray" # light, dark, gray or preference
+  description = "random nonsense"
+
+[permalinks]
+  posts = "/posts/:year/:month/:title/"
+
+[menu]
+  [[menu.main]]
+    name = "Posts"
+    url = "/posts"
+  [[menu.main]]
+    name = "Tags"
+    url = "/tags"
