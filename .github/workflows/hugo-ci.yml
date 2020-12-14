@@ -21,10 +21,8 @@ jobs:
 
       - name: Build
         run: hugo --minify
-      
-      - name: Zip
-        run: zip -r public.zip public
 
       - uses: actions/upload-artifact@v2
         with:
-          name: public.zip
+          name: public
+          path: public
