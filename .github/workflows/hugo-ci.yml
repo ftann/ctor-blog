@@ -21,3 +21,6 @@ jobs:
 
       - name: Build
         run: hugo --minify
+      
+      - name: Zip
+        run: zip -r public.zip public
