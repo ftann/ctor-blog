@@ -1,2 +1,3 @@
-# ftch-blog
+# ctor-blog
+
 homepage blog

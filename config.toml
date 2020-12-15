@@ -1,6 +1,6 @@
-baseURL = "https://floriantanner.ch/"
+baseURL = "https://ctor.ch/"
 languageCode = "en"
-title = "ft"
+title = "ctor"
 copyright = "© {year}"
 
 theme = "solar2"
@@ -23,3 +23,9 @@ summaryLength = 24
   [[menu.main]]
     name = "Tags"
     url = "/tags"
+  [[menu.other]]
+    name = "Cloud"
+    url = "https://cloud.ctor.ch"
+  [[menu.other]]
+    name = "Media"
+    url = "https://media.ctor.ch"
