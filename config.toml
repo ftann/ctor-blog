@@ -23,9 +23,3 @@ summaryLength = 24
   [[menu.main]]
     name = "Tags"
     url = "/tags"
-  [[menu.other]]
-    name = "Cloud"
-    url = "https://cloud.ctor.ch"
-  [[menu.other]]
-    name = "Media"
-    url = "https://media.ctor.ch"
