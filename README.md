@@ -1,3 +1,3 @@
 # ctor-blog
 
-homepage blog
+landing page of [ctor.ch](https://ctor.ch)
