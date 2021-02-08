@@ -314,7 +314,7 @@ open-source efi implementations and get rid of intel me and the likes. Good luck
 
 # Thanks for all the fish
 
-Do you like the guide and want to give feedback or found a mistake? Then send me a mail to `floriantanner /at/ protonmail /dot/ ch`
+Do you like the guide and want to give feedback or found a mistake? Then send me a mail to `f4ntasyland /at/ protonmail /dot/ com`
 
 You can always buy me a beer.
 `（ ^_^）o自自o（^_^ ）`
