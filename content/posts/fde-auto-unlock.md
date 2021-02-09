@@ -112,14 +112,6 @@ GRUB_CMDLINE_LINUX="rd.luks.uuid=root-uuid rd.luks.key=root-uuid=/root.key:UUID=
   the crypttab generator now ignores in the [initrd][2] the `/etc/crypttab` entries. This important
   because these are supplied directly.
 
-Dracut also needs to be instructed to enable networking. To do so one must add a dracut
-configuration that loads the network module. Add a file `/etc/dracut.conf.d/90-network.conf` with
-the content:
-
-```shell
-add_dracutmodules+=" network "
-```
-
 ### Update grub config
 
 Update the grub configuration after editing the kernel command line.
@@ -210,10 +202,18 @@ dnf install -y dracut-network
 ## Network connectivity
 
 This guide doesn't use systemd's networkd in early boot. To start network connectivity in early boot
-add the following kernel command line options:
+add the following kernel command line options to  `/etc/default/grub`:
 
 ```shell
 rd.neednet=1 ip=dhcp
+```
+
+Dracut also needs to be instructed to enable networking. To do so one must add a dracut
+configuration that loads the network module. Add a file `/etc/dracut.conf.d/90-network.conf` with
+the content:
+
+```shell
+add_dracutmodules+=" network "
 ```
 
 ## SSH key
