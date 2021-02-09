@@ -45,14 +45,17 @@ dd bs=1024 count=8 if=/dev/random of=data.key
 
 The weakness in this setup is the usb stick. It isn't encrypted and therefore the key files are
 accessible to everybody. __DON'T LOSE YOUR KEYS!__.
+Fedora needs `exfatprogs` installed for `mkfs.exfat` being available
 
 ```shell
+dnf install exfatprogs
 mkfs.exfat /dev/sd<Xn>
 ```
 
-Then copy the keys to the stick:
+Then mount the usb stick and copy the keys to the stick:
 
 ```shell
+mkdir /mnt/usb
 mount /dev/sd<Xn> /mnt/usb
 cp *.key /mnt/usb
 ```
@@ -90,7 +93,7 @@ then the `/etc/crypttab` is adjusted to use the key files for the data storage t
 
 ## Kernel command line
 
-To configure the kernel command line in fedora edit the `/etc/default/grup` file. Beside the
+To configure the kernel command line in fedora edit the `/etc/default/grub` file. Beside the
 existing option that instructs the kernel on which partition contains the encrypted root file system
 several additional commands are added.
 
@@ -220,7 +223,7 @@ ssh-ed25519 <pubkey> <name>
 
 ### ! (IMPORTANT) Permission denied (RTFM)
 
-Some setups leave the root account locked or without password, and the admin is the user created
+Some setups leave the root account locked or without a password, and the admin is the user created
 during setup. This prevents SSH access in early boot. Because the SSH server by default uses `root`
 for the login and `root` doesn't have a password set the login fails.
 
