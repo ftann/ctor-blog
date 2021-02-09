@@ -45,11 +45,9 @@ dd bs=1024 count=8 if=/dev/random of=data.key
 
 The weakness in this setup is the usb stick. It isn't encrypted and therefore the key files are
 accessible to everybody. __DON'T LOSE YOUR KEYS!__.
-Fedora needs `exfatprogs` installed for `mkfs.exfat` being available
 
 ```shell
-dnf install exfatprogs
-mkfs.exfat /dev/sd<Xn>
+mkfs.vfat /dev/sd<Xn>
 ```
 
 Then mount the usb stick and copy the keys to the stick:
