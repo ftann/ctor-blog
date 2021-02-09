@@ -1,5 +1,5 @@
 ---
-title: "Full-disk-encryption with auto unlock and fallback"
+title: "Full-disk-encryption with automatic unlock and ssh fallback"
 keywords: ["server", "encryption", "linux", "auto", "zfs"]
 tags: ["cryptsetup", "dracut", "encryption", "linux", "systemd", "zfs"]
 date: 2021-02-06T10:39:38+01:00
@@ -112,10 +112,28 @@ GRUB_CMDLINE_LINUX="rd.luks.uuid=root-uuid rd.luks.key=root-uuid=/root.key:UUID=
   the crypttab generator now ignores in the [initrd][2] the `/etc/crypttab` entries. This important
   because these are supplied directly.
 
-After editing the kernel command line update the grub configuration:
+Dracut also needs to be instructed to enable networking. To do so one must add a dracut
+configuration that loads the network module. Add a file `/etc/dracut.conf.d/90-network.conf` with
+the content:
+
+```shell
+add_dracutmodules+=" network "
+```
+
+### Update grub config
+
+Update the grub configuration after editing the kernel command line.
 
 ```shell
 grub2-mkconfig -o /etc/grub2-efi.cfg
+```
+
+### Update initrd
+
+Ensure that the initial ram disk contains all the changes so far.
+
+```shell
+dracut -f -v
 ```
 
 ## Crypttab
@@ -167,14 +185,6 @@ Set the `nofail` option for all datasets.
 
 ```shell
 zfs set org.openzfs.systemd:nofail=on <volume>
-```
-
-## Update initrd
-
-Ensure that the initial ram disk contains all the changes so far.
-
-```shell
-dracut -f -v
 ```
 
 # Automatic unlock
@@ -315,12 +325,14 @@ open-source efi implementations and get rid of intel me and the likes. Good luck
 
 # Thanks for all the fish
 
-Do you like the guide and want to give feedback or found a mistake? Then send me a mail to `f4ntasyland /at/ protonmail /dot/ com`
+Do you like the guide and want to give feedback or found a mistake? Then send me a mail
+to `f4ntasyland /at/ protonmail /dot/ com`
 
 You can always buy me a beer.
 `（ ^_^）o自自o（^_^ ）`
 
-_[xmr][10]: 473WTZ1gWFdjdEyioCQfbGQKRurZQoPDJLhuFJyubCrk4TRogKCtRum63bFMx2dP2y4AN1vf2fN6La7V7eB2cZ4vNJgMAcG_
+_[xmr][10]:
+473WTZ1gWFdjdEyioCQfbGQKRurZQoPDJLhuFJyubCrk4TRogKCtRum63bFMx2dP2y4AN1vf2fN6La7V7eB2cZ4vNJgMAcG_
 
 [0]: https://docs.fedoraproject.org/en-US/fedora/f33/install-guide/
 
