@@ -179,6 +179,23 @@ Set the `nofail` option for all datasets.
 zfs set org.openzfs.systemd:nofail=on <volume>
 ```
 
+The `zfs-import-cache.service` must wait for the encrypted volumes to be available. Add a drop-in
+configuration and set the devices as requirements in the boot process.
+
+```shell
+systemctl edit zfs-import-cache.service
+```
+
+The content of `/etc/systemd/system/zfs-import-cache.service.d/override.conf` should look like this:
+
+```shell
+[Unit]
+After=systemd-cryptsetup@data1.service
+After=systemd-cryptsetup@data2.service
+Requires=systemd-cryptsetup@data1.service
+Requires=systemd-cryptsetup@data2.service
+```
+
 # Automatic unlock
 
 From now on it should be possible to start the machine with the usb-key-stick inserted. The current
