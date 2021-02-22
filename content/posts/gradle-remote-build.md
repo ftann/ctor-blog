@@ -147,16 +147,18 @@ ssh build
 Make sure that the `.git` folder isn't excluded from being copied to the remote machine. Nebula
 requires the repository information to be present.
 
-# Conclusion
+# The count
 
 A quick comparison of a clean build with my macbook with a [i7-7820HQ][4], my main rig with an
 [i5-9600K][5] and the company build server with a [E5-2690 v3][6].
 
-Task | MacBook | Workstation | Server
----- | ------- | ----------- | ------
-`./gradlew clean build` | 7m41s | 4m4s | 2m41s
+Machine | t
+:------ | ---:
+MacBook | 7m 41s
+Workstation | 4m 4s
+Server | 2m 41s
 
-Note: When starting a fresh container the gradle wrapper must first be downloaded.
+# Conclusion
 
 Those numbers matter! Faster build times mean less downtime for developers. Calculate for yourself
 how much time and money you could save.
