@@ -150,7 +150,8 @@ requires the repository information to be present.
 # The count
 
 A quick comparison of a clean build with my macbook with a [i7-7820HQ][4], my main rig with an
-[i5-9600K][5] and the company build server with a [E5-2690 v3][6].
+[i5-9600K][5] and the company build server with a [E5-2690 v3][6]. The project contains around 50k
+lines of java/kotlin/groovy code with tests and static code analysis.
 
 Machine | t
 :------ | ---:
