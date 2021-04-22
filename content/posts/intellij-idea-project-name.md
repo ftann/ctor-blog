@@ -1,5 +1,5 @@
 ---
-title: "UnclutterIntellij Idea Project Name"
+title: "Untangle Intellij Idea Project Name"
 keywords: ["gradle", "intellij"]
 tags: ["gradle", "idea", "intellij"]
 date: 2021-04-22T12:42:30+02:00
@@ -34,7 +34,7 @@ initech-contractmgmt-policy-bl
 └─── // other stuff
 ```
 
-# Unclutter the view
+# Untangle the view
 
 To get rid of those cluttered names in the project view
 
