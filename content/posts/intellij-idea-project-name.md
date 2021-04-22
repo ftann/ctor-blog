@@ -1,5 +1,5 @@
 ---
-title: "Untangle Intellij Idea Project Name"
+title: "Untangle Intellij Idea Project Names"
 keywords: ["gradle", "intellij"]
 tags: ["gradle", "idea", "intellij"]
 date: 2021-04-22T12:42:30+02:00
@@ -36,16 +36,14 @@ initech-contractmgmt-policy-bl
 
 # Untangle the view
 
-To get rid of those cluttered names in the project view
+To get rid of those cluttered names in the project view:
 
 * Open the menu `Help` and select `Edit Custom Properties`
 * Create the file if it's missing
 * Add the following property and save
-
-```properties
-ide.hide.real.module.name=true
-```
-
+  ```properties
+  ide.hide.real.module.name=true
+  ```
 * Restart idea
 
 After the restart the project view should look nice and clean.
