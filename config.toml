@@ -19,7 +19,7 @@ summaryLength = 24
 [menu]
   [[menu.main]]
     name = "Posts"
-    url = "/posts"
+    url = "/posts/"
   [[menu.main]]
     name = "Tags"
-    url = "/tags"
+    url = "/tags/"
